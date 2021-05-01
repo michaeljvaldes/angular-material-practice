@@ -13,14 +13,15 @@ import { UserService } from './services/user.service';
 import { NotesComponent } from './components/notes/notes.component';
 
 const routes: Routes = [
-  { path: '',
+  {
+    path: '',
     component: ContactmanagerAppComponent,
     children: [
       { path: ':id', component: MainContentComponent },
       { path: '', component: MainContentComponent }
     ]
   },
-  { path: '**', redirectTo: 'contactmanager'}
+  { path: '**', redirectTo: 'contactmanager' }
 ];
 
 @NgModule({
@@ -37,4 +38,5 @@ const routes: Routes = [
     UserService
   ]
 })
-export class ContactmanagerModule { }
+export class ContactmanagerModule {
+}
