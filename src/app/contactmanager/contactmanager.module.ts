@@ -10,6 +10,7 @@ import { MaterialModule } from '../material/material.module';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/user.service';
+import { NotesComponent } from './components/notes/notes.component';
 
 const routes: Routes = [
   { path: '',
@@ -23,7 +24,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ContactmanagerAppComponent, ToolbarComponent, MainContentComponent, SidenavComponent],
+  declarations: [ContactmanagerAppComponent, ToolbarComponent, MainContentComponent, SidenavComponent, NotesComponent],
   imports: [
     CommonModule,
     HttpClientModule,
