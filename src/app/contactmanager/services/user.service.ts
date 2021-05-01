@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,11 @@ export class UserService {
     return this._users.asObservable();
   }
 
-  loadAll() {
+  userById(id: number): User {
+    return this.dataStore.users.find(storedUser => storedUser.id === id);
+  }
+
+  loadAll(): Subscription {
     const usersUrl = 'https://angular-material-api.azurewebsites.net/users';
 
     return this.http.get<User[]>(usersUrl)
