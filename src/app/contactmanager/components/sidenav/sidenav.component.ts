@@ -18,6 +18,8 @@ export class SidenavComponent implements OnInit {
   public isScreenSmall: boolean;
 
   users: Observable<User[]>;
+  isDarkTheme = false;
+
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -42,6 +44,10 @@ export class SidenavComponent implements OnInit {
         this.sidenav.close();
       }
     });
+  }
+
+  toggleTheme(): void {
+    this.isDarkTheme = !this.isDarkTheme;
   }
 
 }
