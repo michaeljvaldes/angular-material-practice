@@ -13,6 +13,7 @@ export class ToolbarComponent implements OnInit {
 
   @Output() toggleSidenav = new EventEmitter<void>();
   @Output() toggleTheme = new EventEmitter<void>();
+  @Output() toggleDirection = new EventEmitter<void>();
 
   constructor(
     private dialog: MatDialog,
@@ -29,8 +30,6 @@ export class ToolbarComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed', result);
-
       if (result) {
         this.openSnackBar('Contact added', 'Navigate')
           .onAction().subscribe(() => {

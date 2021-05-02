@@ -19,6 +19,7 @@ export class SidenavComponent implements OnInit {
 
   users: Observable<User[]>;
   isDarkTheme = false;
+  direction = 'ltr';
 
 
   constructor(
@@ -48,6 +49,10 @@ export class SidenavComponent implements OnInit {
 
   toggleTheme(): void {
     this.isDarkTheme = !this.isDarkTheme;
+  }
+
+  toggleDirection(): void {
+    this.direction = this.direction === 'ltr' ? 'rtl' : 'ltr';
   }
 
 }
