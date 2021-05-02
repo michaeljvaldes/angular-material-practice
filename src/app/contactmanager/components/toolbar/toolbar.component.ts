@@ -23,7 +23,7 @@ export class ToolbarComponent implements OnInit {
   }
 
   openAddContactDialog(): void {
-    let dialogRef = this.dialog.open(NewContactDialogComponent, {
+    const dialogRef = this.dialog.open(NewContactDialogComponent, {
       width: '4500px'
     });
 
